@@ -13,7 +13,8 @@ body {
 /* Contenedor principal con cuadrícula básica */
 .container {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Dos columnas: 2 partes para noticias principales y 1 para la barra lateral */
+    grid-template-columns: 1fr auto; /* Dos columnas: 2 partes para noticias principales y 1 para la barra lateral */
+    grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
         "header header"
         "nav nav"
@@ -37,19 +38,23 @@ body {
 /* Barra de navegación */
 .nav {
     grid-area: nav; /* Área de la barra de navegación */
+    display: flex;
     background-color: #555;
     padding: 10px;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav ul {
     list-style-type: none; /* Elimina los puntos de la lista */
+    display: flex;
 }
 
 .nav a {
     color: #ffffff;
     text-decoration: none;
     margin: 0 10px; /* Espacio entre los enlaces */
+
 }
 
 /* Estilos para la sección de noticias principales */
@@ -69,4 +74,27 @@ body {
 
 /* Barra lateral para noticias destacadas */
 .sidebar {
-    grid-area: sidebar; /* Asigna esta área a la barra l
+    grid-area: sidebar; /* Asigna esta área a la barra lateral*/
+    border: 1px solid black;
+    padding: 10px;
+}
+.sidebar h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    grid-area:footer;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    margin-top: 10px;
+}
+
